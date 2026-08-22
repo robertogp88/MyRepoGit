@@ -1,0 +1,1002 @@
+
+
+
+
+.card {
+    font-family: times new roman;
+    text-align: justify; 
+
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+}
+
+.card th { /* Esto es porque existía un conflicto con <th> que no se centraban como es su defecto*/
+    text-align: center; 
+}
+
+
+
+/* 🟢🟢🟢🟢🟢 SELECTORES DE TIPO-ETIQUETA 🟢🟢🟢🟢🟢 */
+/* 🟢🟢🟢🟢🟢 SELECTORES DE TIPO-ETIQUETA 🟢🟢🟢🟢🟢 */
+/* 🟢🟢🟢🟢🟢 SELECTORES DE TIPO-ETIQUETA 🟢🟢🟢🟢🟢 */
+
+
+/* ❌❌❌❌❌❌ LINEA SEPARADORA DE RESPUESTAS ❌❌❌❌❌❌ */
+.hr{
+	margin: 20px auto;
+	border: double;
+	border-radius: 50px;
+	font-size: 2.5px;
+
+
+	background: repeating-linear-gradient(
+	  -45deg,
+	  white,
+	  white 5px,
+	  black 5px,
+	  black 10px
+	);
+}
+
+
+
+/* ❌❌❌❌❌❌ ETIQUETA <HR> ❌❌❌❌❌❌ */
+
+hr{
+	max-width: 75%;
+	border-bottom: 1.5px dashed gray;
+}
+
+
+
+/* ❌❌❌❌❌❌ ETIQUETA <h> ❌❌❌❌❌❌ */
+h1, h2, h3 {
+    margin-bottom: 0px;
+}
+
+
+
+
+/* ❌❌❌❌❌❌ ETIQUETA <IMG> ❌❌❌❌❌❌ */
+img {
+	display:block;
+	margin:auto;
+	margin-top: 2.5px;
+	margin-bottom: 2.5px;
+
+   border:groove;
+   border-radius: 5px;
+   /* border-color:blue; */
+}
+
+
+
+
+
+
+
+/*❌ FORMATO DE TEXTO ❌*/
+
+u {
+    text-decoration: underline;
+    text-decoration-color: blue;
+}
+
+
+
+/*❌ LISTAS ❌*/
+ul, ol {
+  margin-top: 0px;
+
+  margin-left: 0em;        /* Elimina margen exterior */
+  padding-left: 0em;     /* Ajusta el espacio interior — puedes probar con 0.5em o 0.8em */
+  list-style-position: inside; /* Hace que el símbolo esté dentro del bloque de texto */
+}
+
+
+
+li {
+ margin-left: 0em; 
+
+  margin-top: 0px;
+
+
+  padding-left: 0em;     /* Ajusta el espacio interior — puedes probar con 0.5em o 0.8em */
+  list-style-position: inside; /* Hace que el símbolo esté dentro del bloque de texto */
+} 
+
+
+
+
+
+
+
+
+
+/*🟢🟢🟢TOGGLES: Triángulos🟢🟢🟢*/
+/*🟢🟢🟢TOGGLES: Triángulos🟢🟢🟢*/
+/*🟢🟢🟢TOGGLES: Triángulos🟢🟢🟢*/
+details {
+  display: block; 
+  box-sizing: border-box;
+  
+  /* ESTADO PLEGADO: Centrado y ajustado al texto */
+  width: fit-content; 
+  margin: 0 auto; /* <--- Esta es la clave: Centra horizontalmente */
+
+  border: 2px solid rgb(170, 170, 170);
+  border-radius: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* ESTADO DESPLEGADO: Centrado y al x% */
+details[open] {
+  width: 97.5%;
+  /* No hace falta repetir el margin: 0 auto porque ya lo hereda de arriba */
+}
+
+/* El resto de tu código (summary, triángulo, etc.) se queda igual */
+summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  cursor: pointer;
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: 5px;
+  padding-top: 2px;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::before {
+  content: '►';
+  display: block;
+  font-size: 12px;
+  color: #e74c3c;
+  transition: transform 0.2s, color 0.2s;
+  transform-origin: center; 
+}
+
+details[open] summary::before {
+  transform: rotate(90deg);
+  color: #2ecc71;
+}
+
+
+
+/* Borde  izquierdo rojo en los details
+details > summary ~ * {
+  border-left: 2.5px solid red;
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 🟢🟢🟢🟢🟢 Mys SELECTORES UNIVERSALES 🟢🟢🟢🟢🟢 */
+/* 🟢🟢🟢🟢🟢 Mys SELECTORES UNIVERSALES 🟢🟢🟢🟢🟢 */
+/* 🟢🟢🟢🟢🟢 Mys SELECTORES UNIVERSALES 🟢🟢🟢🟢🟢 */
+
+/* ❌❌❌❌❌❌ WRAP ❌❌❌❌❌❌ */
+[xwrap]{
+ white-space: pre-wrap;
+}
+
+
+[ywrap]{
+ white-space: normal;
+}
+
+
+
+
+/* ❌ PÁRRAFOS ❌ */
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+
+.p-ctr {
+	text-align: center;
+}
+
+[p-ctr]{
+	text-align: center;
+}
+
+
+
+.p-jtf{
+	text-align: justify;
+}
+
+[p-jtf]{
+	text-align: justify;
+}
+
+
+
+.p-dcha{
+	text-align: right;
+}
+
+[p-dcha]{
+	text-align: right;
+
+}
+
+
+
+
+
+/* ❌ SEPARACIÓN-SANGRÍAS-MARGIN ❌ */
+/* ❌ Izquierda ❌ */
+[sepI_0]{margin-left: 0px;}
+
+
+[sepI_2c5]{margin-left: 2.5px;}
+[sepI_-2c5]{margin-left: -2.5px;}
+
+[sepI_5]{margin-left: 5px;}
+[sepI_-5]{margin-left: -5px;}
+
+[sepI_7c5]{margin-left: 7.5px;}
+[sepI_-7c5]{margin-left: -7.5px;}
+
+[sepI_10]{margin-left: 10px;}
+[sepI_-10]{margin-left: -10px;}
+
+/* ❌ Derecha ❌ */
+[sepD_0]{margin-right: 0px;}
+
+
+[sepD_2c5]{margin-right: 2.5px;}
+[sepI_-2c5]{margin-right: -2.5px;}
+
+[sepD_5]{margin-right: 5px;}
+[sepI_-5]{margin-right: -5px;}
+
+[sepD_7c5]{margin-right: 7.5px;}
+[sepI_-7c5]{margin-right: -7.5px;}
+
+[sepD_10]{margin-right: 10px;}
+[sepD_-10]{margin-right: -10px;}
+
+/* ❌ Arriba ❌ */
+[sepAR_0]{margin-top: 0px;}
+
+
+[sepAR_2c5]{margin-top: 2.5px;}
+[sepAR_-2c5]{margin-top: -2.5px;}
+
+[sepAR_5]{margin-top: 5px;}
+[sepAR_-5]{margin-top: -5px;}
+
+[sepAR_7c5]{margin-top: 7.5px;}
+[sepAR_-7c5]{margin-top: -7.5px;}
+
+[sepAR_10]{margin-top: 10px;}
+[sepAR_-10]{margin-top: -10px;}
+
+/* ❌ Abajo ❌ */
+[sepAB_0]{margin-bottom: 0px;}
+
+
+[sepAB_2c5]{margin-bottom: 2.5px;}
+[sepAB_-2c5]{margin-bottom: -2.5px;}
+
+[sepAB_5]{margin-bottom: 5px;}
+[sepAR_-5]{margin-bottom: -5px;}
+
+[sepAB_7c5]{margin-bottom: 7.5px;}
+[sepAB_-7c5]{margin-bottom: -7.5px;}
+
+[sepAB_10]{margin-bottom: 10px;}
+[sepAB_-10]{margin-bottom: -10px;}
+
+
+
+
+
+
+
+/* ❌ ESPACIOS-PADDING ❌ */
+/* ❌ Izquierda ❌ */
+[espI_0]{margin-left: 0px;}
+
+
+[espI_2c5]{margin-left: 2.5px;}
+[espI_-2c5]{margin-left: -2.5px;}
+
+[espI_5]{margin-left: 5px;}
+[espI_-5]{margin-left: -5px;}
+
+[espI_7c5]{margin-left: 7.5px;}
+[espI_-7c5]{margin-left: -7.5px;}
+
+[espI_10]{margin-left: 10px;}
+[espI_-10]{margin-left: -10px;}
+
+/* ❌ Derecha ❌ */
+[espD_0]{margin-right: 0px;}
+
+
+[espD_2c5]{margin-right: 2.5px;}
+[espI_-2c5]{margin-right: -2.5px;}
+
+[espD_5]{margin-right: 5px;}
+[espI_-5]{margin-right: -5px;}
+
+[espD_7c5]{margin-right: 7.5px;}
+[espI_-7c5]{margin-right: -7.5px;}
+
+[espD_10]{margin-right: 10px;}
+[espD_-10]{margin-right: -10px;}
+
+/* ❌ Arriba ❌ */
+[espAR_0]{margin-top: 0px;}
+
+
+[espAR_2c5]{margin-top: 2.5px;}
+[espAR_-2c5]{margin-top: -2.5px;}
+
+[espAR_5]{margin-top: 5px;}
+[espAR_-5]{margin-top: -5px;}
+
+[espAR_7c5]{margin-top: 7.5px;}
+[espAR_-7c5]{margin-top: -7.5px;}
+
+[espAR_10]{margin-top: 10px;}
+[espAR_-10]{margin-top: -10px;}
+
+/* ❌ Abajo ❌ */
+[espAB_0]{margin-bottom: 0px;}
+
+
+[espAB_2c5]{margin-bottom: 2.5px;}
+[espAB_-2c5]{margin-bottom: -2.5px;}
+
+[espAB_5]{margin-bottom: 5px;}
+[espAR_-5]{margin-bottom: -5px;}
+
+[espAB_7c5]{margin-bottom: 7.5px;}
+[espAB_-7c5]{margin-bottom: -7.5px;}
+
+[espAB_10]{margin-bottom: 10px;}
+[espAB_-10]{margin-bottom: -10px;}
+
+
+
+
+
+/* ❌ TAMAÑOS DE LETRA ❌ */
+[tl-8]{
+ font-size: 8px;
+}
+
+[tl-8c5]{
+ font-size: 8.5px;
+}
+
+[tl-10]{
+ font-size: 10px;
+}
+
+[tl-10c5]{
+ font-size: 10.5px;
+}
+
+[tl-12]{
+ font-size: 12px;
+}
+
+[tl-12c5]{
+ font-size: 12.5px;
+}
+
+[tl-14]{
+ font-size: 14px;
+}
+
+[tl-14c5]{
+ font-size: 14.5px;
+}
+
+[tl-16]{
+ font-size: 16px;
+}
+
+[tl-16c5]{
+ font-size: 16.5px;
+}
+
+
+
+
+
+
+/* ❌ TAMAÑOS DE LETRA PROPORCIONALES❌ */
+[tl-sr]{
+	font-size: smaller;
+}
+
+[tl-s]{	font-size: small;}  /* */  [tl-xs]{font-size: x-small;}  /* */  [tl-xxs]{font-size: xx-small;}
+
+
+[tl-m]{
+	font-size: medium;
+}
+
+
+[tl-lr]{
+	font-size: larger;
+}
+
+[tl-l]{font-size: large;}  /* */  [tl-xl]{font-size: x-large;} /* */ [tl-xxl]{font-size: xx-large;}
+
+
+/* ❌ LETRAS ❌ */
+
+.l-b{
+	font-weight: bold;
+}
+
+[l-b]{
+	font-weight: bold;
+
+}
+
+
+
+
+.l-i{
+	font-style: italic;
+}
+
+[l-i]{
+	font-style: italic;
+
+}
+
+
+
+
+.l-u{
+	text-decoration: underline;
+}
+
+[l-u]{
+	text-decoration: underline;
+
+}
+
+
+
+
+/* ❌❌❌ COLORES, FONDOS Y BORDES ❌❌❌ */
+
+/*❌ BLANCO ❌*/
+.c-bl{
+	color: white;
+}
+
+[c-bl]{
+	color: white;
+
+}
+
+
+
+
+.f-bl{
+	background-color: white;
+}
+
+[f-bl]{
+	background-color: white;
+
+}
+
+
+
+
+.b-bl{
+	border: solid;
+	border-width: thin;
+	border-radius: 5px;
+	border-color: white;
+}
+
+[b-bl]{
+		border: solid;
+	border-width: thin;
+	border-radius: 5px;
+	border-color: white;
+}
+
+
+
+/*❌ Negro ❌*/
+.c-ng{
+	color: black;
+}
+
+[c-ng]{
+	color: black;
+
+}
+
+
+
+
+.f-ng{
+	background-color: black;
+}
+
+[f-ng]{
+	background-color: black;
+
+}
+
+
+
+
+.b-ng{
+	border: solid;
+	border-width: thin;
+	border-radius: 5px;
+	border-color: black;
+}
+
+[b-ng]{
+	border: solid;
+	border-width: thin;
+	border-radius: 5px;
+	border-color: black;	
+}
+
+
+
+/*❌ Gris ❌*/
+.c-gr{
+	color: gray;
+}
+
+[c-gr]{
+	color: gray;
+
+}
+
+
+
+
+.f-gr{
+	background-color: gray;
+}
+
+[f-gr]{
+	background-color: gray;
+
+}
+
+
+
+
+.b-gr{
+	border: solid;
+	border-width: thin;
+	border-radius: 5px;
+	border-color: gray;
+}
+
+[b-gr]{
+	border: solid;
+	border-width: thin;
+	border-radius: 5px;
+	border-color: gray;
+}
+
+
+
+/*❌ Rojo ❌*/
+.c-rj{
+	color: red;
+}
+
+[c-rj]{
+	color: red;
+
+}
+
+
+
+
+.f-rj{
+	background-color: red;
+}
+
+[f-rj]{
+	background-color: red;
+
+}
+
+
+
+
+.b-rj{
+	border: solid;
+	border-width: thin;
+	border-radius: 5px;
+	border-color: red;
+}
+
+[b-rj]{
+	border: solid;
+	border-width: thin;
+	border-radius: 5px;
+	border-color: red;
+}
+
+
+
+/*❌ Verde ❌*/
+.c-vd{
+	color: #30d158;
+}
+
+[c-vd]{
+	color: #30d158;
+
+}
+
+
+
+
+.f-vd{
+	background-color: #30d158;
+}
+
+[f-vd]{
+	background-color: #30d158;
+
+}
+
+
+
+.b-vd{
+	border: solid;
+	border-width: thin;
+	border-radius: 5px;
+	border-color: #30d158;
+}
+
+[b-vd]{
+	border: solid;
+	border-width: thin;
+	border-radius: 5px;
+	border-color: #30d158;	
+}
+
+
+
+/*❌ Azul ❌*/
+.c-az{
+	color: #0091ff;
+}
+
+[c-az]{
+	color: #0091ff;
+
+}
+
+
+
+.f-az{
+	background-color: #0091ff;
+}
+
+[f-az]{
+	background-color: #0091ff;
+
+}
+
+
+
+.b-az{
+	border: solid;
+	border-width: thin;
+	border-radius: 5px;
+	border-color: #0091ff;
+}
+
+[b-az]{
+	border: solid;
+	border-width: thin;
+	border-radius: 5px;
+	border-color: #0091ff;
+}
+
+
+
+/*❌ Amarillo ❌*/
+.c-am{
+	color: yellow;
+}
+
+[c-am]{
+	color: yellow;
+
+}
+
+
+
+.f-am{
+	background-color: yellow;
+}
+
+[f-am]{
+	background-color: yellow;
+
+}
+
+
+
+.b-am{
+	border: solid;
+	border-width: thin;
+	border-radius: 5px;
+	border-color: yellow;
+}
+
+[b-am]{
+	border: solid;
+	border-width: thin;
+	border-radius: 5px;
+	border-color: yellow;
+}
+
+
+
+/*❌ Naranja ❌*/
+.c-nj{
+	color: #ff9230;
+}
+
+[c-nj]{
+	color: #ff9230;
+
+}
+
+
+
+.f-nj{
+	background-color: #ff9230;
+}
+
+[f-nj]{
+	background-color: #ff9230;
+
+}
+
+
+
+.b-nj{
+	border: solid;
+	border-width: thin;
+	border-radius: 5px;
+	border-color: #ff9230;
+}
+
+[b-nj]{
+	border: solid;
+	border-width: thin;
+	border-radius: 5px;
+	border-color: #ff9230;
+}
+
+
+
+/*❌ Violeta ❌*/
+.c-vl{
+	color: #db34f2;
+}
+
+[c-vl]{
+	color: #db34f2;
+
+}
+
+
+
+.f-vl{
+	background-color: #db34f2;
+}
+
+[f-vl]{
+	background-color: #db34f2;
+
+}
+
+
+
+.b-vl{
+	border: solid;
+	border-width: thin;
+	border-radius: 5px;
+	border-color:  #db34f2;
+}
+
+[b-vl]{
+	border: solid;
+	border-width: thin;
+	border-radius: 5px;
+	border-color:  #db34f2;
+}
+
+
+
+/*❌ Rosa ❌*/
+.c-rs{
+	color: pink;
+}
+
+[c-rs]{
+	color: pink;
+
+}
+
+
+
+.f-rs{
+	background-color: pink;
+}
+
+[f-rs]{
+	background-color: pink;
+
+}
+
+
+
+.b-rs{
+	border: solid;
+	border-width: thin;
+	border-radius: 5px;
+	border-color: pink;
+}
+
+[b-rs]{
+	border: solid;
+	border-width: thin;
+	border-radius: 5px;
+	border-color: pink;
+}
+	
+	
+
+
+/*❌ Marron ❌*/
+.c-mr{
+	color: brown;
+}
+
+[c-mr]{
+	color: brown;
+
+}
+
+
+
+.f-mr{
+	background-color: brown;
+}
+
+[f-mr]{
+	background-color: brown;
+
+}
+
+
+
+.b-mr{
+	border: solid;
+	border-width: thin;
+	border-radius: 5px;
+	border-color: brown;
+}
+
+[b-mr]{
+	border: solid;
+	border-width: thin;
+	border-radius: 5px;
+	border-color: brown;
+}
+
+
+
+
+/*❌ Beige ❌*/
+.c-bs{
+	color: beige;
+}
+
+[c-bs]{
+	color: beige;
+
+}
+
+
+
+.f-bs{
+	background-color: beige;
+}
+
+[f-bs]{
+	background-color: beige;
+
+}
+
+
+
+.b-bs{
+	border: solid;
+	border-width: thin;
+	border-radius: 5px;
+	border-color: beige;
+}
+
+[b-bs]{
+	border: solid;
+	border-width: thin;
+	border-radius: 5px;
+	border-color: beige;
+}
+
+
+
+
+
