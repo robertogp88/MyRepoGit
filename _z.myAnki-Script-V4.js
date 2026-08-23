@@ -1,4 +1,47 @@
 
+
+
+
+
+
+
+
+/* 🟠🟠🟠 GENERAL - GENERAL 🟠🟠🟠*/
+/* 🟠🟠🟠 GENERAL - GENERAL 🟠🟠🟠*/
+/* 🟠🟠🟠 GENERAL - GENERAL 🟠🟠🟠*/
+
+// PARA MOSTRAR LO OCULTADO AL HACER TAP. HAY CÓDIGO .CSS
+
+
+function toggleTexto(elemento) {
+  elemento.classList.toggle("mostrado");
+}
+
+
+
+// CÓDIGO JS PARA DESLIZAR Y BUSCAR EN TODOS LOS MAZOS MEDIANTE ACTION USER 1
+
+(function(){
+  function ua1() {
+    // Elimina enlaces previos s los hubiera
+    const old = document.getElementById('ankiSearchLink');
+    if (old) old.remove();
+
+    // Crea el enlace con el esquema de búsqueda vacío
+    const link = document.createElement('a');
+    link.href = 'anki://x-callback-url/search?query=';
+    link.id = 'ankiSearchLink';
+    link.style.display = 'none';
+    document.body.appendChild(link);
+
+    // Simula un clic (esto sí lo permite iOS)
+    link.click();
+  }
+
+  // Asocia la función al User Action 1
+  window.userJs1 = ua1;
+})();
+
 /* 🟩🟨🟩🟨🟩🟨 CLOZES - CLOZES - CLOZES 🟩🟨🟩🟨🟩🟨*/
 /* 🟩🟨🟩🟨🟩🟨 CLOZES - CLOZES - CLOZES 🟩🟨🟩🟨🟩🟨*/
 /* 🟩🟨🟩🟨🟩🟨 CLOZES - CLOZES - CLOZES 🟩🟨🟩🟨🟩🟨*/
