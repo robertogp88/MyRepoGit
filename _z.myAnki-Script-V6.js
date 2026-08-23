@@ -1,4 +1,21 @@
+    (function () {
+  // Función para inyectar el CSS globalmente en la cabecera de la página
+  function injectGlobalCSS() {
+    // Evita duplicar la inyección si ya existe
+    if (document.getElementById('anki-global-custom-style')) return;
 
+    const link = document.createElement('link');
+    link.id = 'anki-global-custom-style';
+    link.rel = 'stylesheet';
+    // Reemplaza esta URL por la ruta real de tu archivo CSS en jsDelivr
+    link.href = 'https://cdn.jsdelivr.net/gh/Nombre-Usuario/Nombre-Repo@main/_z.myAnki-Style.css';
+    
+    document.head.appendChild(link);
+  }
+
+  // Ejecutar inmediatamente
+  injectGlobalCSS();
+})();
 
 /* 🟠🟠🟠 GENERAL - GENERAL 🟠🟠🟠*/
 /* 🟠🟠🟠 GENERAL - GENERAL 🟠🟠🟠*/
