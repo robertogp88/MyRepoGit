@@ -1,17 +1,10 @@
 
 
-
-
-
-
-
-
 /* 🟠🟠🟠 GENERAL - GENERAL 🟠🟠🟠*/
 /* 🟠🟠🟠 GENERAL - GENERAL 🟠🟠🟠*/
 /* 🟠🟠🟠 GENERAL - GENERAL 🟠🟠🟠*/
 
 // PARA MOSTRAR LO OCULTADO AL HACER TAP. HAY CÓDIGO .CSS
-
 
 function toggleTexto(elemento) {
   elemento.classList.toggle("mostrado");
@@ -41,6 +34,64 @@ function toggleTexto(elemento) {
   // Asocia la función al User Action 1
   window.userJs1 = ua1;
 })();
+
+
+
+
+/* 🟦🟧🟫🟦🟧🟫 PRE-FORMATED 🟦🟧🟫🟦🟧🟫 */
+/* 🟦🟧🟫🟦🟧🟫 PRE-FORMATED 🟦🟧🟫🟦🟧🟫 */
+/* 🟦🟧🟫🟦🟧🟫 PRE-FORMATED 🟦🟧🟫🟦🟧🟫 */
+
+// PARA QUE NO HAYA UN SALTO DE LINEA EN LA PRIMERA LÍNEA EN LAS ETIQUETS <SCRIPT> CON CÓDIGO HTML PLANO
+  document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("script.codigo-HTML").forEach(el => {
+    // Elimina el primer salto de línea si existe al inicio del texto
+    el.textContent = el.textContent.replace(/^\r?\n/, "");
+  });
+});
+
+
+
+// PARA QUE NO HAYA UN SALTO DE LINEA EN LA PRIMERA LÍNEA EN LAS ETIQUETS <CODE> CON CÓDIGO HTML PLANO
+  document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("code").forEach(el => {
+    // Elimina únicamente el primer salto de línea y la indentación inicial si la hay
+    el.innerHTML = el.innerHTML.replace(/^\r?\n/, "");
+  });
+});
+
+
+// PARA QUE NO HAYA UN SALTO DE LINEA EN LA PRIMERA LÍNEA EN LAS ETIQUETS <PRE> CON CÓDIGO HTML PLANO
+  document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("pre").forEach(el => {
+    // Elimina únicamente el primer salto de línea y la indentación inicial si la hay
+    el.innerHTML = el.innerHTML.replace(/^\r?\n/, "");
+  });
+});
+
+
+
+// PARA QUE NO HAYA UN SALTO DE LINEA EN LA PRIMERA LÍNEA y LA ÚLTIMA EN LAS ETIQUETS <IMG> CON CÓDIGO HTML PLANO
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("pre").forEach(el => {
+    let html = el.innerHTML
+      .replace(/^\s*\r?\n/, "")       // Elimina el primer salto inicial
+      .replace(/(\r?\n\s*)+$/, "");   // Elimina los saltos finales
+      
+    // Busca cualquier etiqueta <img> y elimina el salto de línea y espacios de después
+    html = html.replace(/(<img\b[^>]*>)\s*\r?\n\s*/gi, "$1");
+    
+    el.innerHTML = html;
+  });
+});
+
+
+
+
+
+
+
+
 
 /* 🟩🟨🟩🟨🟩🟨 CLOZES - CLOZES - CLOZES 🟩🟨🟩🟨🟩🟨*/
 /* 🟩🟨🟩🟨🟩🟨 CLOZES - CLOZES - CLOZES 🟩🟨🟩🟨🟩🟨*/
@@ -108,6 +159,8 @@ function toggleTexto(elemento) {
 /* 🟧🟥🟧🟥🟧🟥 SUMMARY "SMR9" - SUMMARY "SMR9" 🟧🟥🟧🟥🟧🟥 */
 /* 🟧🟥🟧🟥🟧🟥 SUMMARY "SMR9" - SUMMARY "SMR9" 🟧🟥🟧🟥🟧🟥 */
 /* 🟧🟥🟧🟥🟧🟥 SUMMARY "SMR9" - SUMMARY "SMR9" 🟧🟥🟧🟥🟧🟥 */
+
+// ETIQUETA SUMMARY CON "smr9" EN BORDE INFERIOR DCHO y CONTRACCIÓN C. CLIC/TAP
 function initSmr9Labels() {
 
     document.querySelectorAll("summary[smr9]").forEach(summary => {
@@ -190,3 +243,6 @@ document.readyState === "complete"
     ? initSmr9Labels()
     : window.addEventListener("load", initSmr9Labels);
 
+/* 🟧🟥🟧🟥🟧🟥 FINAL: SUMMARY "SMR9" - SUMMARY "SMR9" 🟧🟥🟧🟥🟧🟥 */
+/* 🟧🟥🟧🟥🟧🟥 FINAL: SUMMARY "SMR9" - SUMMARY "SMR9" 🟧🟥🟧🟥🟧🟥 */
+/* 🟧🟥🟧🟥🟧🟥 FINAL: SUMMARY "SMR9" - SUMMARY "SMR9" 🟧🟥🟧🟥🟧🟥 */
