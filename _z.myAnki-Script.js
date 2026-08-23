@@ -8,7 +8,9 @@
 
     cloze.scrollIntoView({
       behavior: 'auto',
-      block: 'center'
+    //   block: 'center'
+      block: 'start'
+
     });
   }
 
