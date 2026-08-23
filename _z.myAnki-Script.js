@@ -1,3 +1,5 @@
+
+//PARA QUE AL MOSTRARSE PREGUNTA VAYA DIRECTAMENTE AL CLOZE ACTIVO
 (function () {
   function scrollToCloze() {
     const cloze = document.querySelector('.cloze');
