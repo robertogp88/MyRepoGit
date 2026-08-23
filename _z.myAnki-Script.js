@@ -1,7 +1,6 @@
 
 //PARA QUE AL MOSTRARSE PREGUNTA VAYA DIRECTAMENTE AL CLOZE ACTIVO
 
-/*
 (function () {
   function scrollToCloze() {
     const cloze = document.querySelector('.cloze');
@@ -16,5 +15,3 @@
   // Espera a que Anki termine de renderizar
   setTimeout(scrollToCloze, 0);
 })();
-
-*/
