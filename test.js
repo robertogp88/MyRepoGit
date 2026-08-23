@@ -1,1 +1,1 @@
-// alert("EL JAVASCRIPT FUNCIONA");
+alert("VERSION 2");
