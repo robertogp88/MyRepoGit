@@ -8,12 +8,11 @@
 
     cloze.scrollIntoView({
       behavior: 'auto',
-    //   block: 'center'
-      block: 'start'
-
+      block: 'center'
     });
   }
 
-  // Espera a que Anki termine de renderizar
-  setTimeout(scrollToCloze, 0);
+  // Ejecutar de inmediato y por si acaso un reintento mínimo
+  scrollToCloze();
+  setTimeout(scrollToCloze, 50);
 })();
