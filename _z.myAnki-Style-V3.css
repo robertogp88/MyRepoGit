@@ -193,7 +193,12 @@ pre div, pre p, pre br {
     font-family: inherit !important;
 }
 
-
+/* PARA QUE EL CONTENIDO DE LA ETIQUETA SE AJUSTE AL CONTENEDOR Y NO SEAN LINEAS LARGAS*/
+pre {
+  white-space: pre-wrap;       /* Mantiene espacios y rompe líneas */
+  word-break: break-all;       /* Rompe palabras largas si es necesario */
+  max-width: 100%;             /* Define el ancho máximo del contenedor */
+}
 
 code{
 	display: block;  /* Lo convierte en un bloque visible */
