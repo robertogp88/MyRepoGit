@@ -1,6 +1,4 @@
 
-//PARA QUE AL MOSTRARSE PREGUNTA VAYA DIRECTAMENTE AL CLOZE ACTIVO
-
 (function () {
   function scrollToCloze() {
     const cloze = document.querySelector('.cloze');
@@ -8,11 +6,12 @@
 
     cloze.scrollIntoView({
       behavior: 'auto',
-      block: 'center'
+    //   block: 'center'
+      block: 'start'
+
     });
   }
 
-  // Ejecutar de inmediato y por si acaso un reintento mínimo
-  scrollToCloze();
-  setTimeout(scrollToCloze, 50);
+  // Espera a que Anki termine de renderizar
+  setTimeout(scrollToCloze, 0);
 })();
