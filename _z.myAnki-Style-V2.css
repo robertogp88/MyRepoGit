@@ -1,5 +1,5 @@
 
- 
+
 
 
 .card {
@@ -13,6 +13,59 @@
 .card th { /* Esto es porque existía un conflicto con <th> que no se centraban como es su defecto*/
     text-align: center; 
 }
+
+
+
+
+
+
+/* 🟫🟨🟪🟫🟨🟪 CAMPOS 🟫🟨🟪🟫🟨🟪 */
+/* 🟫🟨🟪🟫🟨🟪 CAMPOS 🟫🟨🟪🟫🟨🟪 */
+/* 🟫🟨🟪🟫🟨🟪 CAMPOS 🟫🟨🟪🟫🟨🟪 */
+
+
+.CampoTit {
+  text-align: center;
+  border-style: solid;
+  border-width: initial;
+  border-radius: 5px;
+  box-shadow: inset 0 0 10px 0 gray;
+
+
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+  margin-bottom: 1em;
+}
+
+
+.Campo1 {
+  	border-style: dotted;
+  	border-width: thin;
+  	border-radius: 5px;
+  	box-shadow: inset 0 0 10px 0 gray;
+
+
+	padding-left: 0.25em;
+	padding-right: 0.25em;
+	margin-bottom: 1em;
+}
+
+
+
+.Campo2 {
+	/* ESTE ES ES ESTILO DENTRO DE LOS CMAPOS TOGGLEADOS
+	border-style: solid;
+	border-color: beige; */
+
+	padding-left: 0.25em;
+	padding-right: 0.25em;
+	text-align: justify;
+}
+
+
+
+
+
 
 
 
@@ -110,6 +163,244 @@ li {
 
 
 
+/*🟢🟢🟢PREFORMATED🟢🟢🟢*/
+/*🟢🟢🟢PREFORMATED🟢🟢🟢*/
+/*🟢🟢🟢PREFORMATED🟢🟢🟢*/
+[xwrap]{
+	white-space: pre-wrap;
+}
+
+
+[ywrap]{
+	white-space: normal;
+}
+
+
+pre {
+    white-space: pre-wrap !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+	/* text-align: justify; */
+    /* font-family: inherit !important; Hereda la fuente normal de la tarjeta */
+}
+
+
+/* Neutraliza cualquier bloque o salto que el editor cree al pulsar Enter */
+pre div, pre p, pre br {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.4 !important;
+    font-family: inherit !important;
+}
+
+
+
+code{
+	display: block;  /* Lo convierte en un bloque visible */
+	white-space: pre-wrap !important;
+    line-height: 1.4 !important;
+    /* margin: 0 !important; */
+	padding: 5px !important;
+	background-color: beige;
+	border-radius: 10px;
+
+	border-radius: 10px;
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 🟢🟢🟢🟢🟢 SELECTORES DE CLASE 🟢🟢🟢🟢🟢 */
+/* 🟢🟢🟢🟢🟢 SELECTORES DE CLASE 🟢🟢🟢🟢🟢 */
+/* 🟢🟢🟢🟢🟢 SELECTORES DE CLASE 🟢🟢🟢🟢🟢 */
+
+/* ❌❌❌❌❌❌ RECORDATORIO DE-CORRIDO ANTES DE MOSTAR RESPUESTA ❌❌❌❌❌❌ CAMPOS -> Multi-Info, Paises, Biografías, Multi-Bio, */
+.corrido{
+	width: fit-content;
+	margin: auto;
+	margin-bottom:-4%; 
+	margin-top:-3%;
+
+   border-radius: 25px;
+}
+
+
+
+/* ❌❌❌❌❌❌ CAMPOS SCROLEABLES ❌❌❌❌❌❌ */
+.scroll {
+    display: block;
+    box-sizing: content-box;
+    overflow-y: scroll;
+	border-radius: 2.5%;
+    
+    /* El fondo que ya tenías */
+    background-color: rgb(73, 73, 73); 
+    
+    /* ESTA ES LA CLAVE: Forzamos el blanco */
+    color: white !important; 
+
+    max-width: 100%; /* Cambiado 'auto' por '100%' para evitar errores */
+    max-height: 500px;
+}
+
+
+
+/* ❌❌❌ ENLACES DE BÚSQUEDA WEB: Google, GPT, RAE... ❌❌❌ */
+.busqueda-web {
+	border-style: solid;
+	border-width: thin;
+
+
+	text-align: center;
+	padding: 2.5px;
+
+
+	width: fit-content;
+	margin: 0 auto;
+}
+
+
+
+
+
+/* ❌❌❌ 🟢ACLARACIONES🟢 ❌❌❌   ->  NOTAS: Paises,  Traducc, Definiciones, Fonetica, */
+.aclaraciones{
+	margin: auto;
+	width: fit-content;
+	border-radius: 50px;
+}
+
+
+
+/* ❌❌❌ 🔴CONFUSIONES🔴 ❌❌❌ ->  NOTAS: Paises, Multi-Traducc, Traducc, Definiciones, Fonética, */
+.confusiones{
+	border-radius: 50px;
+
+	margin: auto;
+	width: fit-content;
+}
+
+
+/* ❌❌❌ 🟡SINONIM🟡 ❌❌❌ ->  NOTAS: Paises, Multi-Traducc, Definiciones, */
+.sinonim{
+	width:fit-content;
+	margin: auto;
+	border-radius: 50px;
+}
+
+
+
+
+/* ❌❌❌ 🟠SIMILAR/PARECIDO🟠 ❌❌❌ ->  NOTAS: Multi-Traducc, Traducc, Definiciones, Fonética, */
+.similar{
+	width:fit-content;
+	margin: auto;
+	border-radius: 50px;
+}
+
+
+
+
+
+/* 🟣🟣🔵🔵🟠🟠 COMBINANDO JAVA-SCRIPT 🟣🟣🔵🔵🟠🟠 */
+/* 🟣🟣🔵🔵🟠🟠 COMBINANDO JAVA-SCRIPT 🟣🟣🔵🔵🟠🟠 */
+/* 🟣🟣🔵🔵🟠🟠 COMBINANDO JAVA-SCRIPT 🟣🟣🔵🔵🟠🟠 */
+
+/*❌ TEXTO OCULTO: ¿PARA MOSTRAR LO OCULTADO AL HACER TAP?❌*/
+/*
+.txtOc {
+  filter: blur(10px);
+  cursor: pointer;
+}
+
+[txtOc]{
+  filter: blur(10px);
+  cursor: pointer;
+}
+*/
+
+
+
+/* 🟢 PARA ESTOS "MOSTRADO" HAY UN CÓDIGO JS 🟢 */
+
+/*
+.txtOc.mostrado {
+  filter: none;
+}
+
+[txtOc].mostrado{
+  filter: none;
+}
+*/
+
+
+
+[txtOc] {
+  filter: blur(5px);     /* ocultamos el texto real */
+  text-shadow: 
+    0 0 6px  rgba(170, 80, 255, 0.85),
+    0 0 12px rgba(140, 60, 220, 0.65),
+    0 0 18px rgba(110, 40, 180, 0.45);
+  cursor: pointer;
+
+}
+
+[txtOc].mostrado {
+  filter: none;
+  color: inherit;            /* vuelve el color normal */
+  text-shadow: none;         /* quitamos el efecto verde */
+}
+
+
+
+
+
+
+/*🟢🟢🟢 CLOZES-CLOZES-CLOZES 🟢🟢🟢*/
+/*🟢🟢🟢 CLOZES-CLOZES-CLOZES 🟢🟢🟢*/
+/*🟢🟢🟢 CLOZES-CLOZES-CLOZES 🟢🟢🟢*/
+
+/* CLOZES VERDES y AMARILLOS */
+.cloze{
+  color: green;      /* CLOZES AMARILLOS */
+  background-color: rgba(251, 192, 45, 0.2); /* Fondo suave */
+  border-radius: 4px;
+}
+
+/* RESALTA CLOZES INACTIVOS DENTRO DE UN MISMO CAMPO */
+.cloze-inactive:not(.cloze-revealed) {
+   color:green;
+}
+
+
+/* RESALTA CLOZES INACTIVOS DE DISTINTO CAMPO */
+    /* 1. Limpiamos el texto del contenido-limpio mediante código no es posible en CSS, 
+  pero podemos ocultarlo si el padre tiene un cloze activo */
+.bloque-campo:has(.cloze) .contenido-limpio {
+	display: none !important;
+}
+
+.cloze-limpio {
+	color: darkcyan !important;
+}
+
+
+
+
+
 
 
 
@@ -176,61 +467,128 @@ details > summary ~ * {
 
 
 
+/* ESTOS DOS SELECTORES ES PARA UN TRIÁNGULO NARANJA EN LOS TOGGLES*/
+.contenedor {
+  display: flex;
+  flex-direction: column;   /* clave: apila triángulo y texto */
+  align-items: center;      /* centra horizontalmente */
+
+  gap: 4px;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 🟢🟢🟢🟢🟢 Mys SELECTORES UNIVERSALES 🟢🟢🟢🟢🟢 */
-/* 🟢🟢🟢🟢🟢 Mys SELECTORES UNIVERSALES 🟢🟢🟢🟢🟢 */
-/* 🟢🟢🟢🟢🟢 Mys SELECTORES UNIVERSALES 🟢🟢🟢🟢🟢 */
-
-/* ❌❌❌❌❌❌ WRAP ❌❌❌❌❌❌ */
-[xwrap]{
- white-space: pre-wrap;
+  border: 2px solid rgb(170, 170, 170);
+  border-radius: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 
-[ywrap]{
- white-space: normal;
+.triangulo {
+  margin-top: 5px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid currentColor;
+
+  color: orange;
 }
 
 
+/* EJEMPLO DE USO DE ESTOS TRIÁNGULOS NARANJAS
+
+<div class="contenedor">
+  <span class="triangulo"></span>
+  TxCABEZA
+  <div>
+  TxCUERPO
+  </div>
+</div>
+
+*/
+
+
+
+
+
+
+/* 🟧 🟧 🟧 ESTILO DEL BORDE SUMMARUY "SMR9" 🟧 🟧 🟧 */
+/* 🟧 🟧 🟧 ESTILO DEL BORDE SUMMARUY "SMR9" 🟧 🟧 🟧 */
+/* 🟧 🟧 🟧 ESTILO DEL BORDE SUMMARUY "SMR9" 🟧 🟧 🟧 */
+
+
+:root{
+    --smr9-bg:#dfe7ee;
+    --smr9-text:#2f3b46;
+    --smr9-border:#b4c1cd;
+}
+
+body.night-mode,
+:root[data-theme="dark"]{
+    --smr9-bg:#3b4652;
+    --smr9-text:#eef4fa;
+    --smr9-border:#657484;
+}
+
+@media (prefers-color-scheme:dark){
+    :root{
+        --smr9-bg:#3b4652;
+        --smr9-text:#eef4fa;
+        --smr9-border:#657484;
+    }
+}
+
+.smr9-label{
+    display:block;
+    text-align:right;
+    margin-top:.5em;
+    padding:.25em .5em;
+    border-top:1px solid var(--smr9-border);
+    border-radius:4px;
+    background:var(--smr9-bg)!important;
+    color:var(--smr9-text)!important;
+    font-size:.7em;
+    opacity:.75;
+	font-weight:bold;
+
+
+}
+
+
+details{
+    transition:height 0.5s ease;
+    overflow:hidden;
+}
+
+summary{
+    cursor:pointer;
+}
+
+
+/* 🟧 🟧 🟧 FINAL: ESTILO DEL BORDE SUMMARUY "SMR9" 🟧 🟧 🟧 */
+/* 🟧 🟧 🟧 FINAL: ESTILO DEL BORDE SUMMARUY "SMR9" 🟧 🟧 🟧 */
+/* 🟧 🟧 🟧 FINAL: ESTILO DEL BORDE SUMMARUY "SMR9" 🟧 🟧 🟧 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 🟢🟢🟢🟢🟢 Mys SELECTORES UNIVERSALES 🟢🟢🟢🟢🟢 */
+/* 🟢🟢🟢🟢🟢 Mys SELECTORES UNIVERSALES 🟢🟢🟢🟢🟢 */
+/* 🟢🟢🟢🟢🟢 Mys SELECTORES UNIVERSALES 🟢🟢🟢🟢🟢 */
+
+[myColum] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
 
 
 /* ❌ PÁRRAFOS ❌ */
