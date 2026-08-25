@@ -105,9 +105,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!cloze) return;
 
     cloze.scrollIntoView({
-      //behavior: 'auto',
-        block: 'center'
-      block: 'start'
+      behavior: 'auto',
+      block: 'center'
+      //block: 'start'
 
     });
   }
