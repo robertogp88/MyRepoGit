@@ -42,29 +42,24 @@ function toggleTexto(elemento) {
 /* 🟦🟧🟫🟦🟧🟫 PRE-FORMATED 🟦🟧🟫🟦🟧🟫 */
 /* 🟦🟧🟫🟦🟧🟫 PRE-FORMATED 🟦🟧🟫🟦🟧🟫 */
 
-/* EVITA EL PRIMER Y ÚLTIMO SALTO DE LIENA EN LOS ELEMENTOS QUE TENGAN EL ATRIBUTO [PRE0]... 
-y TAMBIEN SUS ELEMENTOS ANIDADOS.  Tambien elmina los espacios en blanco antes y después de las etiquetas <hr> e <img>: */
-
-document.addEventListener("DOMContentLoaded", () => {
-  // Selecciona <pre>, [pre0], [pre_dest] y [pre_cita], procesándolos de dentro hacia afuera (.reverse())
-  const elementos = Array.from(document.querySelectorAll("pre, img, code, [pre0], [pre_dest], [pre_cita]")).reverse();
+(function procesarEspaciosAnki() {
+  // Seleccionamos elementos objetivo
+  const elementos = Array.from(
+    document.querySelectorAll("pre, img, code, [pre0], [pre_dest], [pre_cita]")
+  ).reverse();
 
   elementos.forEach(el => {
-    // 1. Limpiamos espacios y saltos de línea iniciales y finales habituales
     let htmlLimpio = el.innerHTML.trim();
 
-    // 2. Eliminamos los espacios y saltos de línea tanto ANTES como DESPUÉS de <hr> o <img>
-    // - Primera parte: elimina saltos/espacios antes de la etiqueta y deja la etiqueta ($2)
-    htmlLimpio = htmlLimpio.replace(/[\r?\n]+\s*(<hr\b[^>]*>|<img\b[^>]*>)/gi, "$1");
-    
-    // - Segunda parte: elimina saltos/espacios después de la etiqueta manteniendo la etiqueta ($1)
-    htmlLimpio = htmlLimpio.replace(/(<hr\b[^>]*>|<img\b[^>]*>)\s*[\r?\n]+/gi, "$1");
+    // 1. Elimina saltos de línea y espacios Justo ANTES de <hr> o <img>
+    htmlLimpio = htmlLimpio.replace(/(?:\r?\n|\s)+(?=<hr\b|<img\b)/gi, "");
+
+    // 2. Elimina saltos de línea y espacios JUSTO DESPUÉS de <hr> o <img>
+    htmlLimpio = htmlLimpio.replace(/(<hr\b[^>]*>|<img\b[^>]*>)(?:\r?\n|\s)+/gi, "$1");
 
     el.innerHTML = htmlLimpio;
   });
-});
-
-
+})();
 
 
 
