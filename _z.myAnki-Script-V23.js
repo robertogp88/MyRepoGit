@@ -43,7 +43,27 @@ function toggleTexto(elemento) {
 /* 🟦🟧🟫🟦🟧🟫 PRE-FORMATED 🟦🟧🟫🟦🟧🟫 */
 /* 🟦🟧🟫🟦🟧🟫 PRE-FORMATED 🟦🟧🟫🟦🟧🟫 */
 
+/* EVITA EL PRIMER Y ÚLTIMO SALTO DE LIENA EN LOS ELEMENTOS QUE TENGAN EL ATRIBUTO [PRE0]... 
+y TAMBIEN SUS ELEMENTOS ANIDADOS.  Tambien elmina los espacios en blanco antes y después de las etiquetas <hr> e <img>: */
 
+document.addEventListener("DOMContentLoaded", () => {
+  // Selecciona <pre>, [pre0], [pre_dest] y [pre_cita], procesándolos de dentro hacia afuera (.reverse())
+  const elementos = Array.from(document.querySelectorAll("pre, [pre0], [pre_dest], [pre_cita]")).reverse();
+
+  elementos.forEach(el => {
+    // 1. Limpiamos espacios y saltos de línea iniciales y finales habituales
+    let htmlLimpio = el.innerHTML.trim();
+
+    // 2. Eliminamos los espacios y saltos de línea tanto ANTES como DESPUÉS de <hr> o <img>
+    // - Primera parte: elimina saltos/espacios antes de la etiqueta y deja la etiqueta ($2)
+    htmlLimpio = htmlLimpio.replace(/[\r?\n]+\s*(<hr\b[^>]*>|<img\b[^>]*>)/gi, "$1");
+    
+    // - Segunda parte: elimina saltos/espacios después de la etiqueta manteniendo la etiqueta ($1)
+    htmlLimpio = htmlLimpio.replace(/(<hr\b[^>]*>|<img\b[^>]*>)\s*[\r?\n]+/gi, "$1");
+
+    el.innerHTML = htmlLimpio;
+  });
+});
 
 
 // PARA QUE NO HAYA UN SALTO DE LINEA EN LA PRIMERA LÍNEA EN LAS ETIQUETS <SCRIPT> CON CÓDIGO HTML PLANO
