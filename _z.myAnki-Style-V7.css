@@ -175,11 +175,15 @@ li {
 
 
 pre {
-    white-space: pre-wrap !important;
+    white-space: pre-wrap !important; /* Mantiene espacios y rompe líneas */
     line-height: 1.4 !important;
     margin: 0 !important;
 	/* text-align: justify; */
     /* font-family: inherit !important; Hereda la fuente normal de la tarjeta */
+
+/* PARA QUE EL CONTENIDO DE LA ETIQUETA SE AJUSTE AL CONTENEDOR Y NO SEAN LINEAS LARGAS*/
+  word-break: break-all;       /* Rompe palabras largas si es necesario */
+  max-width: 100%;             /* Define el ancho máximo del contenedor */
 }
 
 
@@ -191,12 +195,27 @@ pre div, pre p, pre br {
     font-family: inherit !important;
 }
 
-/* PARA QUE EL CONTENIDO DE LA ETIQUETA SE AJUSTE AL CONTENEDOR Y NO SEAN LINEAS LARGAS*/
-pre {
-  white-space: pre-wrap;       /* Mantiene espacios y rompe líneas */
+
+
+[pre]{
+/* VALORES <PRE> POR DEFECTO; */
+    display: block;
+    font-family: monospace;
+    /* white-space: pre; */
+    margin: 1em 0;
+
+/* VALORES AÑADIDOS */
+  white-space: pre-wrap !important; /* Mantiene espacios y rompe líneas */
   word-break: break-all;       /* Rompe palabras largas si es necesario */
   max-width: 100%;             /* Define el ancho máximo del contenedor */
+
+  line-height: 1.4 !important;
+  margin: 0 !important;
+  /* text-align: justify; */
+  /* font-family: inherit !important; Hereda la fuente normal de la tarjeta */
 }
+
+
 
 code{
 	display: block;  /* Lo convierte en un bloque visible */
