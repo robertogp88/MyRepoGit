@@ -48,7 +48,7 @@ y TAMBIEN SUS ELEMENTOS ANIDADOS.  Tambien elmina los espacios en blanco antes y
 
 document.addEventListener("DOMContentLoaded", () => {
   // Selecciona <pre>, [pre0], [pre_dest] y [pre_cita], procesándolos de dentro hacia afuera (.reverse())
-  const elementos = Array.from(document.querySelectorAll("pre, [pre0], [pre_dest], [pre_cita]")).reverse();
+  const elementos = Array.from(document.querySelectorAll("pre, img, code, [pre0], [pre_dest], [pre_cita]")).reverse();
 
   elementos.forEach(el => {
     // 1. Limpiamos espacios y saltos de línea iniciales y finales habituales
@@ -64,51 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
     el.innerHTML = htmlLimpio;
   });
 });
-
-
-// PARA QUE NO HAYA UN SALTO DE LINEA EN LA PRIMERA LÍNEA EN LAS ETIQUETS <SCRIPT> CON CÓDIGO HTML PLANO
-  document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("script.codigo-HTML").forEach(el => {
-    // Elimina el primer salto de línea si existe al inicio del texto
-    el.textContent = el.textContent.replace(/^\r?\n/, "");
-  });
-});
-
-
-
-// PARA QUE NO HAYA UN SALTO DE LINEA EN LA PRIMERA LÍNEA EN LAS ETIQUETS <CODE> CON CÓDIGO HTML PLANO
-  document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("code").forEach(el => {
-    // Elimina únicamente el primer salto de línea y la indentación inicial si la hay
-    el.innerHTML = el.innerHTML.replace(/^\r?\n/, "");
-  });
-});
-
-
-//PARA QUE NO HAYA UN SALTO DE LINEA EN LA PRIMERA LÍNEA EN LAS ETIQUETS <PRE> CON CÓDIGO HTML PLANO
-  document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("pre").forEach(el => {
-    // Elimina únicamente el primer salto de línea y la indentación inicial si la hay
-    el.innerHTML = el.innerHTML.replace(/^\r?\n/, "");
-  });
-}); 
-
-
-
-//PARA QUE NO HAYA UN SALTO DE LINEA EN LA PRIMERA LÍNEA y LA ÚLTIMA EN LAS ETIQUETS <IMG> CON CÓDIGO HTML PLANO
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("pre").forEach(el => {
-    let html = el.innerHTML
-      .replace(/^\s*\r?\n/, "")       // Elimina el primer salto inicial
-      .replace(/(\r?\n\s*)+$/, "");   // Elimina los saltos finales
-      
-    // Busca cualquier etiqueta <img> y elimina el salto de línea y espacios de después
-    html = html.replace(/(<img\b[^>]*>)\s*\r?\n\s*/gi, "$1");
-    
-    el.innerHTML = html;
-  });
-}); 
-
 
 
 
