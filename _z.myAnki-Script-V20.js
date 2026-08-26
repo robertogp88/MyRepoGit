@@ -16,7 +16,7 @@ function toggleTexto(elemento) {
 
 (function(){
   function ua1() {
-    // Elimina enlaces previos s los hubiera
+    // Elimina enlaces previos si los hubiera
     const old = document.getElementById('ankiSearchLink');
     if (old) old.remove();
 
@@ -34,6 +34,7 @@ function toggleTexto(elemento) {
   // Asocia la función al User Action 1
   window.userJs1 = ua1;
 })();
+
 
 
 
