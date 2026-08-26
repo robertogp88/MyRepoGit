@@ -42,25 +42,35 @@ function toggleTexto(elemento) {
 /* 🟦🟧🟫🟦🟧🟫 PRE-FORMATED 🟦🟧🟫🟦🟧🟫 */
 /* 🟦🟧🟫🟦🟧🟫 PRE-FORMATED 🟦🟧🟫🟦🟧🟫 */
 
-(function procesarEspaciosAnki() {
-  // Seleccionamos elementos objetivo
-  const elementos = Array.from(
-    document.querySelectorAll("pre, img, code, [pre0], [pre_dest], [pre_cita]")
-  ).reverse();
+(function() {
+  function procesarEspacios() {
+    // Seleccionamos elementos objetivo
+    const elementos = Array.from(
+      document.querySelectorAll("pre, img, code, [pre0], [pre_dest], [pre_cita]")
+    ).reverse();
 
-  elementos.forEach(el => {
-    let htmlLimpio = el.innerHTML.trim();
+    elementos.forEach(el => {
+      let htmlLimpio = el.innerHTML.trim();
 
-    // 1. Elimina saltos de línea y espacios Justo ANTES de <hr> o <img>
-    htmlLimpio = htmlLimpio.replace(/(?:\r?\n|\s)+(?=<hr\b|<img\b)/gi, "");
+      // 1. Elimina saltos de línea y espacios JUSTO ANTES de <hr> o <img>
+      htmlLimpio = htmlLimpio.replace(/(?:\r?\n|\s)+(?=<hr\b|<img\b)/gi, "");
 
-    // 2. Elimina saltos de línea y espacios JUSTO DESPUÉS de <hr> o <img>
-    htmlLimpio = htmlLimpio.replace(/(<hr\b[^>]*>|<img\b[^>]*>)(?:\r?\n|\s)+/gi, "$1");
+      // 2. Elimina saltos de línea y espacios JUSTO DESPUÉS de <hr> o <img>
+      htmlLimpio = htmlLimpio.replace(/(<hr\b[^>]*>|<img\b[^>]*>)(?:\r?\n|\s)+/gi, "$1");
 
-    el.innerHTML = htmlLimpio;
-  });
+      el.innerHTML = htmlLimpio;
+    });
+  }
+
+  // COMPROBACIÓN DUAL:
+  // Si el DOM ya está listo (como en Anki), se ejecuta al instante.
+  // Si aún se está cargando (como en una Web HTML), espera al evento DOMContentLoaded.
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", procesarEspacios);
+  } else {
+    procesarEspacios();
+  }
 })();
-
 
 
 
