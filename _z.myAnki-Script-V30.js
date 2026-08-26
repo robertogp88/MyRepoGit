@@ -1,5 +1,3 @@
-alert("V14 CARGADO");
-
 /* 🟠🟠🟠 GENERAL - GENERAL 🟠🟠🟠*/ 
 /* 🟠🟠🟠 GENERAL - GENERAL 🟠🟠🟠*/
 /* 🟠🟠🟠 GENERAL - GENERAL 🟠🟠🟠*/
@@ -42,6 +40,9 @@ function toggleTexto(elemento) {
 /* 🟦🟧🟫🟦🟧🟫 PRE-FORMATED 🟦🟧🟫🟦🟧🟫 */
 /* 🟦🟧🟫🟦🟧🟫 PRE-FORMATED 🟦🟧🟫🟦🟧🟫 */
 
+
+/* EVITA EL PRIMER Y ÚLTIMO SALTO DE LIENA EN LOS ELEMENTOS QUE TENGAN EL ATRIBUTO [PRE0]... 
+y TAMBIEN SUS ELEMENTOS ANIDADOS.  Tambien elmina los espacios en blanco antes y después de las etiquetas <hr> e <img>: */
 (function() {
   function procesarEspacios() {
     // Seleccionamos elementos objetivo
