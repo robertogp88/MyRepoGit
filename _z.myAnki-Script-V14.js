@@ -1,8 +1,7 @@
-
+ 
 /* 🟠🟠🟠 GENERAL - GENERAL 🟠🟠🟠*/ 
 /* 🟠🟠🟠 GENERAL - GENERAL 🟠🟠🟠*/
 /* 🟠🟠🟠 GENERAL - GENERAL 🟠🟠🟠*/
-
 // PARA MOSTRAR LO OCULTADO AL HACER TAP. HAY CÓDIGO .CSS
 
 function toggleTexto(elemento) {
