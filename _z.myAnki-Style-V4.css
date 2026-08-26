@@ -174,6 +174,26 @@ li {
 }
 
 
+pre {
+    white-space: pre-wrap !important; /* Mantiene espacios y rompe líneas */
+    line-height: 1.4 !important;
+    margin: 0 !important;
+	/* text-align: justify; */
+    /* font-family: inherit !important; Hereda la fuente normal de la tarjeta */
+
+/* PARA QUE EL CONTENIDO DE LA ETIQUETA SE AJUSTE AL CONTENEDOR Y NO SEAN LINEAS LARGAS*/
+  word-break: break-all;       /* Rompe palabras largas si es necesario */
+  max-width: 100%;             /* Define el ancho máximo del contenedor */
+}
+
+
+/* Neutraliza cualquier bloque o salto que el editor cree al pulsar Enter */
+pre div, pre p, pre br {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.4 !important;
+    font-family: inherit !important;
+}
 
 
 
@@ -203,8 +223,6 @@ li {
   margin: 18px 0; */
   border-radius: 0 6px 6px 0;
 }
-
-
 
 [pre_cita]{
   background-color: #f8f9fa;
