@@ -198,21 +198,7 @@ pre div, pre p, pre br {
 
 
 [pre0]{
-/* VALORES <PRE> POR DEFECTO; */
-    display: block;
-    font-family: monospace;
-    /* white-space: pre; */
-    margin: 1em 0;
 
-/* VALORES AÑADIDOS */
-  white-space: pre-wrap !important; /* Mantiene espacios y rompe líneas */
-  word-break: break-all;       /* Rompe palabras largas si es necesario */
-  max-width: 100%;             /* Define el ancho máximo del contenedor */
-
-  line-height: 1.4 !important;
-  margin: 0 !important;
-  /* text-align: justify; */
-  /* font-family: inherit !important; Hereda la fuente normal de la tarjeta */
 }
 
 
