@@ -1,6 +1,5 @@
  //alert("V14 CARGADO");
 
-
 /* 🟠🟠🟠 GENERAL - GENERAL 🟠🟠🟠*/ 
 /* 🟠🟠🟠 GENERAL - GENERAL 🟠🟠🟠*/
 /* 🟠🟠🟠 GENERAL - GENERAL 🟠🟠🟠*/
