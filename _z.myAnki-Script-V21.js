@@ -85,17 +85,17 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-/*PARA QUE NO HAYA UN SALTO DE LINEA EN LA PRIMERA LÍNEA EN LAS ETIQUETS <PRE> CON CÓDIGO HTML PLANO
+//PARA QUE NO HAYA UN SALTO DE LINEA EN LA PRIMERA LÍNEA EN LAS ETIQUETS <PRE> CON CÓDIGO HTML PLANO
   document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("pre").forEach(el => {
     // Elimina únicamente el primer salto de línea y la indentación inicial si la hay
     el.innerHTML = el.innerHTML.replace(/^\r?\n/, "");
   });
-}); */
+}); 
 
 
 
-/* PARA QUE NO HAYA UN SALTO DE LINEA EN LA PRIMERA LÍNEA y LA ÚLTIMA EN LAS ETIQUETS <IMG> CON CÓDIGO HTML PLANO
+//PARA QUE NO HAYA UN SALTO DE LINEA EN LA PRIMERA LÍNEA y LA ÚLTIMA EN LAS ETIQUETS <IMG> CON CÓDIGO HTML PLANO
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("pre").forEach(el => {
     let html = el.innerHTML
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     el.innerHTML = html;
   });
-}); */
+}); 
 
 
 
