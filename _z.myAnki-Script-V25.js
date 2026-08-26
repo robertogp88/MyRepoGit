@@ -1,6 +1,6 @@
- alert("V14 CARGADO");
+ //alert("V14 CARGADO");
 
-// resto de tu código...
+
 /* 🟠🟠🟠 GENERAL - GENERAL 🟠🟠🟠*/ 
 /* 🟠🟠🟠 GENERAL - GENERAL 🟠🟠🟠*/
 /* 🟠🟠🟠 GENERAL - GENERAL 🟠🟠🟠*/
