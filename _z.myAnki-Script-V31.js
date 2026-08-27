@@ -115,23 +115,27 @@ y TAMBIEN SUS ELEMENTOS ANIDADOS.  Tambien elmina los espacios en blanco antes y
 })();
 
 
-// ABRE LOS <DETAILS QUE TIENEN EL CLOZE ACTIVO> 
+// ABRE TODOS LOS <DETAILS> (INCLUIDOS <DETAILS> ANIDADOS) QUE TIENEN EL CLOZE ACTIVO
 
 (function openDetailsWithActiveCloze() {
     function tryOpen() {
         const cloze = document.querySelector(".cloze");
         if (!cloze) return;
 
-        const details = cloze.closest("details");
-        if (details) {
-            details.open = true;
+        // Recorre todos los ancestros hacia arriba buscando etiquetas <details>
+        let parent = cloze.parentElement;
+        while (parent) {
+            if (parent.tagName && parent.tagName.toLowerCase() === "details") {
+                parent.open = true; // Abre tanto el hijo como todos los padres/abuelos
+            }
+            parent = parent.parentElement;
         }
     }
 
     // Primer intento inmediato
     tryOpen();
 
-    // Reintento breve (AnkiMobile lo necesita)
+    // Reintentos para compatibilidad con AnkiMobile / WebView
     setTimeout(tryOpen, 50);
     setTimeout(tryOpen, 150);
 })();
