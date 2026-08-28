@@ -620,6 +620,17 @@ summary{
 /* 🟢🟢🟢🟢🟢 Mys SELECTORES UNIVERSALES 🟢🟢🟢🟢🟢 */
 /* 🟢🟢🟢🟢🟢 Mys SELECTORES UNIVERSALES 🟢🟢🟢🟢🟢 */
 
+/* ❌ APARTADOS EN EPÍGRAFES ❌ */
+[apdo] {
+    text-align: left !important;
+}
+
+[apdo] > span:first-child {
+    display: block;
+    text-align: right !important;
+
+
+/* ❌ COLUMNAS ❌ */
 [myColum] {
   display: flex;
   align-items: center;
