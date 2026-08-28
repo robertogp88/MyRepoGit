@@ -624,7 +624,10 @@ summary{
 [apdo] > span:first-child {
     display: block;
     text-align: right !important;
+    font-size: 10px !important;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
 
 /* ❌ COLUMNAS ❌ */
 [myColum] {
