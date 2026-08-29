@@ -41,30 +41,38 @@ function toggleTexto(elemento) {
 /* 🟦🟧🟫🟦🟧🟫 PREFORMATED 🟦🟧🟫🟦🟧🟫 */
 /* EVITA EL PRIMER Y ÚLTIMO SALTO DE LIENA EN LOS ELEMENTOS QUE TENGAN EL ATRIBUTO [PRE0]... 
 y TAMBIEN SUS ELEMENTOS ANIDADOS.  Tambien elmina los espacios en blanco antes y después de las etiquetas <hr> e <img>: */
-
 (function() {
   function procesarEspacios() {
-    // 1. Procesa elementos individuales (mantiene tu lógica de img, hr, pre, etc.)
+    // 1. Procesa elementos individuales (lógica de img, hr, etc.)
     const elementos = Array.from(
-      document.querySelectorAll("pre, img, code, [pre0], [prex], [pre_dest], [pre_cita]")
+      document.querySelectorAll("pre, img, code, [pre0], [prex], [pre_dest], [pre_cita], [pre_x]")
     ).reverse();
 
     elementos.forEach(el => {
       let htmlLimpio = el.innerHTML.trim();
-
-      // Elimina saltos de línea y espacios JUSTO ANTES de <hr> o <img>
       htmlLimpio = htmlLimpio.replace(/(?:\r?\n|\s)+(?=<hr\b|<img\b)/gi, "");
-
-      // Elimina saltos de línea y espacios JUSTO DESPUÉS de <hr> o <img>
       htmlLimpio = htmlLimpio.replace(/(<hr\b[^>]*>|<img\b[^>]*>)(?:\r?\n|\s)+/gi, "$1");
-
       el.innerHTML = htmlLimpio;
     });
 
-    // 2. Elimina de forma específica los espacios y saltos de línea vacíos entre bloques div consecutivos
+    // 2. Elimina los espacios y saltos de línea vacíos entre bloques div consecutivos
     const contenedoresPre = document.querySelectorAll("pre");
     contenedoresPre.forEach(pre => {
-      pre.innerHTML = pre.innerHTML.replace(/>\s+</g, '><');
+      let htmlPre = pre.innerHTML;
+      
+      // Elimina espacios entre etiquetas de cierre y apertura (><)
+      htmlPre = htmlPre.replace(/>\s+</g, '><');
+      
+      // NUEVO: Elimina el salto de línea sobrante justo DESPUÉS de un </div> cuando sigue texto suelto
+      htmlPre = htmlPre.replace(/(<\/div>)\s*[\r\n]+\s*/gi, '$1');
+
+      pre.innerHTML = htmlPre;
+    });
+
+    // 3. Elimina el salto de línea inicial justo después de la etiqueta de apertura en [pre_x]
+    const elementosPreX = document.querySelectorAll("[pre_x]");
+    elementosPreX.forEach(el => {
+      el.innerHTML = el.innerHTML.replace(/^\s*[\r\n]+/, "");
     });
   }
 
@@ -74,7 +82,6 @@ y TAMBIEN SUS ELEMENTOS ANIDADOS.  Tambien elmina los espacios en blanco antes y
     procesarEspacios();
   }
 })();
-
 
 
 /* 🟩🟨🟩🟨🟩🟨 CLOZES - CLOZES - CLOZES 🟩🟨🟩🟨🟩🟨*/
