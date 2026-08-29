@@ -628,9 +628,8 @@ summary{
 /* 🟢🟢🟢🟢🟢 Mys SELECTORES UNIVERSALES 🟢🟢🟢🟢🟢 */
 /* 🟢🟢🟢🟢🟢 Mys SELECTORES UNIVERSALES 🟢🟢🟢🟢🟢 */
 
-/* ❌ APARTADOS EN EPÍGRAFES ❌ */
 [apdo] {
-    text-align: left !important;
+    text-align: justify !important;
 }
 
 [apdo] > span:first-child {
@@ -639,6 +638,7 @@ summary{
     font-size: 10px !important;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 
 
 /* ❌ COLUMNAS ❌ */
