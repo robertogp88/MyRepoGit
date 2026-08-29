@@ -213,12 +213,11 @@ pre div, pre p, pre br {
 
 
 /* Elimina la primera linea en los elementos que tengan este selector */
-[pre_x]::before {
-  content: "";
-  display: block;
-  margin-top: -1em;
+[pre_x] {
+  background-color: transparent;
+  /*padding: 12px 16px;
+  margin: 18px 0; */
 }
-
 
 
 
