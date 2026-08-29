@@ -185,7 +185,7 @@ pre {
 
 /* Neutraliza cualquier bloque o salto que el editor cree al pulsar Enter */
 pre div, pre p, pre br {
-    margin: 0 !important;
+    /*margin: 0 !important; Elimino esto para que deje poner márgenes dentro en divs dentro de pre*/
     padding: 0 !important;
     line-height: 1.4 !important;
     font-family: inherit !important;
