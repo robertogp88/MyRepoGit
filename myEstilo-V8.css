@@ -211,12 +211,16 @@ pre div, pre p, pre br {
   /* font-family: inherit !important; Hereda la fuente normal de la tarjeta */
 }
 
-[pre_x] {
-  white-space: pre-wrap;
-}
-[pre_x] {
+
+/* Elimina la primera linea en los elementos que tengan este selector */
+[pre_x]::before {
+  content: "";
   display: block;
+  margin-top: -1em;
 }
+
+
+
 
 [pre_dest]{
   background-color: #fff8e6;
