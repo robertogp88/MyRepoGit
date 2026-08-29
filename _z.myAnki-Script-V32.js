@@ -47,7 +47,7 @@ y TAMBIEN SUS ELEMENTOS ANIDADOS.  Tambien elmina los espacios en blanco antes y
   function procesarEspacios() {
     // Seleccionamos elementos objetivo
     const elementos = Array.from(
-      document.querySelectorAll("pre, img, code, [pre0], [pre_dest], [pre_cita]")
+      document.querySelectorAll("pre, img, code, [pre0], [prex], [pre_dest], [pre_cita]")
     ).reverse();
 
     elementos.forEach(el => {
