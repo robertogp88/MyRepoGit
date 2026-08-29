@@ -36,16 +36,15 @@ function toggleTexto(elemento) {
 
 
 
-/* 🟦🟧🟫🟦🟧🟫 PRE-FORMATED 🟦🟧🟫🟦🟧🟫 */
-/* 🟦🟧🟫🟦🟧🟫 PRE-FORMATED 🟦🟧🟫🟦🟧🟫 */
-/* 🟦🟧🟫🟦🟧🟫 PRE-FORMATED 🟦🟧🟫🟦🟧🟫 */
-
-
+/* 🟦🟧🟫🟦🟧🟫 PREFORMATED 🟦🟧🟫🟦🟧🟫 */
+/* 🟦🟧🟫🟦🟧🟫 PREFORMATED 🟦🟧🟫🟦🟧🟫 */
+/* 🟦🟧🟫🟦🟧🟫 PREFORMATED 🟦🟧🟫🟦🟧🟫 */
 /* EVITA EL PRIMER Y ÚLTIMO SALTO DE LIENA EN LOS ELEMENTOS QUE TENGAN EL ATRIBUTO [PRE0]... 
 y TAMBIEN SUS ELEMENTOS ANIDADOS.  Tambien elmina los espacios en blanco antes y después de las etiquetas <hr> e <img>: */
+
 (function() {
   function procesarEspacios() {
-    // Seleccionamos elementos objetivo
+    // 1. Procesa elementos individuales (mantiene tu lógica de img, hr, pre, etc.)
     const elementos = Array.from(
       document.querySelectorAll("pre, img, code, [pre0], [prex], [pre_dest], [pre_cita]")
     ).reverse();
@@ -53,27 +52,28 @@ y TAMBIEN SUS ELEMENTOS ANIDADOS.  Tambien elmina los espacios en blanco antes y
     elementos.forEach(el => {
       let htmlLimpio = el.innerHTML.trim();
 
-      // 1. Elimina saltos de línea y espacios JUSTO ANTES de <hr> o <img>
+      // Elimina saltos de línea y espacios JUSTO ANTES de <hr> o <img>
       htmlLimpio = htmlLimpio.replace(/(?:\r?\n|\s)+(?=<hr\b|<img\b)/gi, "");
 
-      // 2. Elimina saltos de línea y espacios JUSTO DESPUÉS de <hr> o <img>
+      // Elimina saltos de línea y espacios JUSTO DESPUÉS de <hr> o <img>
       htmlLimpio = htmlLimpio.replace(/(<hr\b[^>]*>|<img\b[^>]*>)(?:\r?\n|\s)+/gi, "$1");
 
       el.innerHTML = htmlLimpio;
     });
+
+    // 2. Elimina de forma específica los espacios y saltos de línea vacíos entre bloques div consecutivos
+    const contenedoresPre = document.querySelectorAll("pre");
+    contenedoresPre.forEach(pre => {
+      pre.innerHTML = pre.innerHTML.replace(/>\s+</g, '><');
+    });
   }
 
-  // COMPROBACIÓN DUAL:
-  // Si el DOM ya está listo (como en Anki), se ejecuta al instante.
-  // Si aún se está cargando (como en una Web HTML), espera al evento DOMContentLoaded.
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", procesarEspacios);
   } else {
     procesarEspacios();
   }
 })();
-
-
 
 
 
