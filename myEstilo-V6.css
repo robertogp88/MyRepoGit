@@ -211,8 +211,9 @@ pre div, pre p, pre br {
   /* font-family: inherit !important; Hereda la fuente normal de la tarjeta */
 }
 
-[pre_1]{
-border: none;
+[pre_x]{
+margin-top: 0 !important;
+padding-top: 0 !important;
 }
 
 
