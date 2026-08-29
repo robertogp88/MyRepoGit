@@ -211,6 +211,10 @@ pre div, pre p, pre br {
   /* font-family: inherit !important; Hereda la fuente normal de la tarjeta */
 }
 
+[pre_1]{
+
+}
+
 
 [pre_dest]{
   background-color: #fff8e6;
