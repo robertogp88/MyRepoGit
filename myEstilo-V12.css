@@ -628,6 +628,23 @@ summary{
 /* 🟢🟢🟢🟢🟢 Mys SELECTORES UNIVERSALES 🟢🟢🟢🟢🟢 */
 /* 🟢🟢🟢🟢🟢 Mys SELECTORES UNIVERSALES 🟢🟢🟢🟢🟢 */
 
+
+[fijar]{  /* Para fijar elementos en la parte superior  EXTRAÍDO DE LAS PLANTILLAS DE LAS NOTAS "CLOZE BASIC y FP"*/
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+	margin-bottom: 5px;
+
+	background-color: rgb(124, 119, 119);
+  border-radius: 5px;
+
+}
+
+
+
+
+
 [apdo] {
     text-align: justify !important;
 }
