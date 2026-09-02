@@ -508,13 +508,15 @@ summary::before {
   transition: transform 0.2s, color 0.2s;
   transform-origin: center; 
 }*/
-summary::before {/*Modificado por el de arriba para ver si se centra la segunda linea del summary tras un <br> */
+summary::before {
   content: '►';
-  display: inline-block; /* Para que respete el text-align: center */
-  margin-right: 5px;
+  display: block; /* Lo fuerza a colocarse en su propia línea arriba */
+  width: fit-content;
+  margin: 0 auto 4px auto; /* Centra el triángulo y le deja un pequeño margen inferior */
   font-size: 12px;
   color: #e74c3c;
   transition: transform 0.2s, color 0.2s;
+  transform-origin: center; 
 }
 
 
