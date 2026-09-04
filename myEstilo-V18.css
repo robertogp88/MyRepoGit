@@ -5,6 +5,11 @@
 
     margin-left: 2.5px;
     margin-right: 2.5px;
+	/* FONT-SIZE QUE COINCIDEN AL ZOOM 100% ANKI
+		17px iPhone
+		15px MacBook
+		*/
+	
 }
 
 .card th { /* Esto es porque existía un conflicto con <th> que no se centraban como es su defecto*/
