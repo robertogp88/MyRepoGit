@@ -39,8 +39,6 @@ function toggleTexto(elemento) {
 /* 🟦🟧🟫🟦🟧🟫 PREFORMATED 🟦🟧🟫🟦🟧🟫 */
 /* 🟦🟧🟫🟦🟧🟫 PREFORMATED 🟦🟧🟫🟦🟧🟫 */
 /* 🟦🟧🟫🟦🟧🟫 PREFORMATED 🟦🟧🟫🟦🟧🟫 */
-/* EVITA EL PRIMER Y ÚLTIMO SALTO DE LIENA EN LOS ELEMENTOS QUE TENGAN EL ATRIBUTO [PRE0]... 
-y TAMBIEN SUS ELEMENTOS ANIDADOS.  Tambien elmina los espacios en blanco antes y después de las etiquetas <hr> e <img>: */
 (function() {
   function procesarEspacios() {
     // 1. Procesa elementos individuales (lógica de img, hr, etc.)
@@ -76,12 +74,33 @@ y TAMBIEN SUS ELEMENTOS ANIDADOS.  Tambien elmina los espacios en blanco antes y
     });
   }
 
+  // Exportamos la función al scope global para poder llamarla tras un fetch dinámico
+  window.procesarEspacios = procesarEspacios;
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", procesarEspacios);
   } else {
     procesarEspacios();
   }
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* 🟩🟨🟩🟨🟩🟨 CLOZES - CLOZES - CLOZES 🟩🟨🟩🟨🟩🟨*/
