@@ -39,9 +39,19 @@ function toggleTexto(elemento) {
 /* 🟦🟧🟫🟦🟧🟫 PREFORMATED 🟦🟧🟫🟦🟧🟫 */
 /* 🟦🟧🟫🟦🟧🟫 PREFORMATED 🟦🟧🟫🟦🟧🟫 */
 /* 🟦🟧🟫🟦🟧🟫 PREFORMATED 🟦🟧🟫🟦🟧🟫 */
+
+
+
+
+
+
+/* 🟩🟨🟩🟨🟩🟨 CLOZES - CLOZES - CLOZES 🟩🟨🟩🟨🟩🟨*/
+/* 🟩🟨🟩🟨🟩🟨 CLOZES - CLOZES - CLOZES 🟩🟨🟩🟨🟩🟨*/
+/* 🟩🟨🟩🟨🟩🟨 CLOZES - CLOZES - CLOZES 🟩🟨🟩🟨🟩🟨*/
 (function() {
+
+  // 1. Procesar espacios en blanco
   function procesarEspacios() {
-    // 1. Procesa elementos individuales (lógica de img, hr, etc.)
     const elementos = Array.from(
       document.querySelectorAll("pre, img, code, [pre0], [prex], [pre_dest], [pre_cita], [pre_x]")
     ).reverse();
@@ -53,35 +63,57 @@ function toggleTexto(elemento) {
       el.innerHTML = htmlLimpio;
     });
 
-    // 2. Elimina los espacios y saltos de línea vacíos entre bloques div consecutivos
     const contenedoresPre = document.querySelectorAll("pre");
     contenedoresPre.forEach(pre => {
       let htmlPre = pre.innerHTML;
-      
-      // Elimina espacios entre etiquetas de cierre y apertura (><)
       htmlPre = htmlPre.replace(/>\s+</g, '><');
-      
-      // NUEVO: Elimina el salto de línea sobrante justo DESPUÉS de un </div> cuando sigue texto suelto
       htmlPre = htmlPre.replace(/(<\/div>)\s*[\r\n]+\s*/gi, '$1');
-
       pre.innerHTML = htmlPre;
     });
 
-    // 3. Elimina el salto de línea inicial justo después de la etiqueta de apertura en [pre_x]
     const elementosPreX = document.querySelectorAll("[pre_x]");
     elementosPreX.forEach(el => {
       el.innerHTML = el.innerHTML.replace(/^\s*[\r\n]+/, "");
     });
   }
 
-  // Exportamos la función al scope global para poder llamarla tras un fetch dinámico
-  window.procesarEspacios = procesarEspacios;
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", procesarEspacios);
-  } else {
-    procesarEspacios();
+  // 2. Desplazar al cloze activo
+  function scrollToCloze() {
+    const cloze = document.querySelector('.cloze-target');
+    if (!cloze) return;
+    cloze.scrollIntoView({
+      behavior: 'auto',
+      block: 'center'
+    });
   }
+
+  // 3. Abrir etiquetas <details> con el cloze activo
+  function openDetailsWithActiveCloze() {
+    function tryOpen() {
+      const cloze = document.querySelector(".cloze-target");
+      if (!cloze) return;
+
+      let parent = cloze.parentElement;
+      while (parent) {
+        if (parent.tagName && parent.tagName.toLowerCase() === "details") {
+          parent.open = true;
+        }
+        parent = parent.parentElement;
+      }
+    }
+
+    tryOpen();
+    setTimeout(tryOpen, 50);
+    setTimeout(tryOpen, 150);
+  }
+
+  // EXPORTAMOS TODAS LAS FUNCIONES A WINDOW PARA LLAMARLAS DESPUÉS DEL FETCH
+  window.MisFuncionesAnki = {
+    procesarEspacios: procesarEspacios,
+    scrollToCloze: scrollToCloze,
+    openDetailsWithActiveCloze: openDetailsWithActiveCloze
+  };
+
 })();
 
 
@@ -103,9 +135,14 @@ function toggleTexto(elemento) {
 
 
 
-/* 🟩🟨🟩🟨🟩🟨 CLOZES - CLOZES - CLOZES 🟩🟨🟩🟨🟩🟨*/
-/* 🟩🟨🟩🟨🟩🟨 CLOZES - CLOZES - CLOZES 🟩🟨🟩🟨🟩🟨*/
-/* 🟩🟨🟩🟨🟩🟨 CLOZES - CLOZES - CLOZES 🟩🟨🟩🟨🟩🟨*/
+
+
+
+
+
+
+
+
 
 // PARA QUE AL MOSTRARSE LA PREGUNTA VAYA DIRECTAMENTE AL CLOZE ACTIVO
 
