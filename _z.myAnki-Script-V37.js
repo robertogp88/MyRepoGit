@@ -39,110 +39,71 @@ function toggleTexto(elemento) {
 /* 🟦🟧🟫🟦🟧🟫 PREFORMATED 🟦🟧🟫🟦🟧🟫 */
 /* 🟦🟧🟫🟦🟧🟫 PREFORMATED 🟦🟧🟫🟦🟧🟫 */
 /* 🟦🟧🟫🟦🟧🟫 PREFORMATED 🟦🟧🟫🟦🟧🟫 */
-
-
-
-
-
-
-/* 🟩🟨🟩🟨🟩🟨 CLOZES - CLOZES - CLOZES 🟩🟨🟩🟨🟩🟨*/
-/* 🟩🟨🟩🟨🟩🟨 CLOZES - CLOZES - CLOZES 🟩🟨🟩🟨🟩🟨*/
-/* 🟩🟨🟩🟨🟩🟨 CLOZES - CLOZES - CLOZES 🟩🟨🟩🟨🟩🟨*/
+/* EVITA EL PRIMER Y ÚLTIMO SALTO DE LIENA EN LOS ELEMENTOS QUE TENGAN EL ATRIBUTO [PRE0]... 
+y TAMBIEN SUS ELEMENTOS ANIDADOS.  Tambien elmina los espacios en blanco antes y después de las etiquetas <hr> e <img>: */
 (function() {
-
-  // 1. Procesar espacios en blanco
   function procesarEspacios() {
+    // Definimos la lista de selectores sobre los que queremos actuar (incluyendo [pre0] y el resto)
+    const selectorCompleto = "pre, img, code, [pre0], [prex], [pre_dest], [pre_cita], [pre_x]";
+
+    // 1. Aplicar estilos de texto para evitar cortes de palabras y justificar el texto
+    const todosLosElementos = document.querySelectorAll(selectorCompleto);
+    todosLosElementos.forEach(el => {
+      // Respeta saltos de línea y espacios en blanco pero permite ajuste natural
+      el.style.whiteSpace = "pre-wrap";
+      // Evita que las palabras se rompan de forma forzada a mitad de sílaba
+      el.style.wordBreak = "normal";
+      el.style.overflowWrap = "break-word";
+      // Justifica el texto en los elementos seleccionados
+      el.style.textAlign = "justify";
+    });
+
+    // 2. Procesa elementos individuales en orden inverso (lógica de img, hr, etc.)
     const elementos = Array.from(
-      document.querySelectorAll("pre, img, code, [pre0], [prex], [pre_dest], [pre_cita], [pre_x]")
+      document.querySelectorAll(selectorCompleto)
     ).reverse();
 
     elementos.forEach(el => {
       let htmlLimpio = el.innerHTML.trim();
+      // Elimina espacios o saltos previos a etiquetas <hr> o <img>
       htmlLimpio = htmlLimpio.replace(/(?:\r?\n|\s)+(?=<hr\b|<img\b)/gi, "");
+      // Elimina espacios o saltos posteriores a etiquetas <hr> o <img>
       htmlLimpio = htmlLimpio.replace(/(<hr\b[^>]*>|<img\b[^>]*>)(?:\r?\n|\s)+/gi, "$1");
       el.innerHTML = htmlLimpio;
     });
 
+    // 3. Elimina los espacios y saltos de línea vacíos entre bloques div consecutivos dentro de <pre>
     const contenedoresPre = document.querySelectorAll("pre");
     contenedoresPre.forEach(pre => {
       let htmlPre = pre.innerHTML;
+      
+      // Elimina espacios entre etiquetas de cierre y apertura (><)
       htmlPre = htmlPre.replace(/>\s+</g, '><');
+      
+      // Elimina el salto de línea sobrante justo DESPUÉS de un </div> cuando sigue texto suelto
       htmlPre = htmlPre.replace(/(<\/div>)\s*[\r\n]+\s*/gi, '$1');
+
       pre.innerHTML = htmlPre;
     });
 
-    const elementosPreX = document.querySelectorAll("[pre_x]");
+    // 4. Elimina el salto de línea inicial justo después de la etiqueta de apertura en elementos [pre_x], [pre0] o similares
+    const elementosPreX = document.querySelectorAll("[pre_x], [pre0]");
     elementosPreX.forEach(el => {
       el.innerHTML = el.innerHTML.replace(/^\s*[\r\n]+/, "");
     });
   }
 
-  // 2. Desplazar al cloze activo
-  function scrollToCloze() {
-    const cloze = document.querySelector('.cloze-target');
-    if (!cloze) return;
-    cloze.scrollIntoView({
-      behavior: 'auto',
-      block: 'center'
-    });
+  // Comprueba el estado de carga del documento para ejecutar la función en el momento adecuado
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", procesarEspacios);
+  } else {
+    procesarEspacios();
   }
-
-  // 3. Abrir etiquetas <details> con el cloze activo
-  function openDetailsWithActiveCloze() {
-    function tryOpen() {
-      const cloze = document.querySelector(".cloze-target");
-      if (!cloze) return;
-
-      let parent = cloze.parentElement;
-      while (parent) {
-        if (parent.tagName && parent.tagName.toLowerCase() === "details") {
-          parent.open = true;
-        }
-        parent = parent.parentElement;
-      }
-    }
-
-    tryOpen();
-    setTimeout(tryOpen, 50);
-    setTimeout(tryOpen, 150);
-  }
-
-  // EXPORTAMOS TODAS LAS FUNCIONES A WINDOW PARA LLAMARLAS DESPUÉS DEL FETCH
-  window.MisFuncionesAnki = {
-    procesarEspacios: procesarEspacios,
-    scrollToCloze: scrollToCloze,
-    openDetailsWithActiveCloze: openDetailsWithActiveCloze
-  };
-
 })();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* 🟩🟨🟩🟨🟩🟨 CLOZES - CLOZES - CLOZES 🟩🟨🟩🟨🟩🟨*/
+/* 🟩🟨🟩🟨🟩🟨 CLOZES - CLOZES - CLOZES 🟩🟨🟩🟨🟩🟨*/
+/* 🟩🟨🟩🟨🟩🟨 CLOZES - CLOZES - CLOZES 🟩🟨🟩🟨🟩🟨*/
 
 // PARA QUE AL MOSTRARSE LA PREGUNTA VAYA DIRECTAMENTE AL CLOZE ACTIVO
 
