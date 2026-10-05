@@ -208,9 +208,14 @@ pre div, pre p, pre br {
     /* white-space: pre; */
     margin: 1em 0;
 
-/* VALORES AÑADIDOS */
+/* VALORES AÑADIDOS - AJUSTES PARA EVITAR CORTES Y RESPETAR PROPIEDADES */
   white-space: pre-wrap !important; /* Mantiene espacios y rompe líneas */
-  word-break: break-all;       /* Rompe palabras largas si es necesario */
+  /*word-break: break-all;        Rompe palabras largas si es necesario */
+  word-break: normal !important;      /* EVITA que se rompan palabras a la mitad */
+  overflow-wrap: normal !important;  /* EVITA que las palabras se corten al final del margen */
+  -webkit-hyphens: none !important;  /* Desactiva los guiones en iOS/AnkiMobile */
+  hyphens: none !important;
+
   max-width: 100%;             /* Define el ancho máximo del contenedor */
 
   line-height: 1.4 !important;
